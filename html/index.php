@@ -1,12 +1,13 @@
 <?php
 
-use Core\Routeur;
+
 use App\Controller\HomeController;
 use App\Controller\UserController;
+use Core\Controller\RouteurController;
 
 define("ROOT", dirname(__DIR__));
 include(ROOT . "/app.php");
-$routeur = new Routeur();
+$routeur = new RouteurController();
 $routeur
     ->add('/', HomeController::class, 'index')
     ->add('/login', UserController::class, 'login');
